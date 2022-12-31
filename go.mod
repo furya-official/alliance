@@ -1,4 +1,4 @@
-module github.com/terra-money/alliance
+module github.com/furya-official/kaiju
 
 go 1.18
 

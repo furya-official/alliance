@@ -1,11 +1,11 @@
 #!/bin/bash
 CHAIN_DIR=./data
-CHAINID=${CHAINID:-alliance}
+CHAINID=${CHAINID:-kaiju}
 
-# alliance1phaxpevm5wecex2jyaqty2a4v02qj7qm24tyvq / alliancevaloper1phaxpevm5wecex2jyaqty2a4v02qj7qmut9cku
+# kaiju1phaxpevm5wecex2jyaqty2a4v02qj7qm24tyvq / kaijuvaloper1phaxpevm5wecex2jyaqty2a4v02qj7qmut9cku
 VAL_MNEMONIC_1="satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn"
 
-# alliance1cyyzpxplxdzkeea7kwsydadg87357qnaznl0wd
+# kaiju1cyyzpxplxdzkeea7kwsydadg87357qnaznl0wd
 DEMO_MNEMONIC_1="notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius"
 DEMO_MNEMONIC_2="quality vacuum heart guard buzz spike sight swarm shove special gym robust assume sudden deposit grid alcohol choice devote leader tilt noodle tide penalty"
 DEMO_MNEMONIC_3="symbol force gallery make bulk round subway violin worry mixture penalty kingdom boring survey tool fringe patrol sausage hard admit remember broken alien absorb"
@@ -15,13 +15,13 @@ STAKEDENOM=${STAKEDENOM:-stake}
 UNBONDING_TIME="5s"
 GOV_PERIOD="8s"
 INFLATION="0.999999999999999999"
-ALLIANCE_CLAIM_REWARDS="5s"
+KAIJU_CLAIM_REWARDS="5s"
 
 
 # Stop if it is already running 
-if pgrep -x "allianced" >/dev/null; then
-    echo "Terminating allianced..."
-    killall allianced
+if pgrep -x "kaijud" >/dev/null; then
+    echo "Terminating kaijud..."
+    killall kaijud
 fi
 
 echo "Removing previous data..."
@@ -34,24 +34,24 @@ if ! mkdir -p $CHAIN_DIR/$CHAINID 2>/dev/null; then
 fi
 
 echo "Initializing $CHAINID..."
-allianced init test --home $CHAIN_DIR/$CHAINID --chain-id=$CHAINID
+kaijud init test --home $CHAIN_DIR/$CHAINID --chain-id=$CHAINID
 
 echo "Adding genesis accounts..."
-echo $VAL_MNEMONIC_1 | allianced keys add val1 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
-echo $DEMO_MNEMONIC_1 | allianced keys add demowallet1 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
-echo $DEMO_MNEMONIC_2 | allianced keys add demowallet2 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
-echo $DEMO_MNEMONIC_3 | allianced keys add demowallet3 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
-echo $DEMO_MNEMONIC_4 | allianced keys add demowallet4 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
+echo $VAL_MNEMONIC_1 | kaijud keys add val1 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
+echo $DEMO_MNEMONIC_1 | kaijud keys add demowallet1 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
+echo $DEMO_MNEMONIC_2 | kaijud keys add demowallet2 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
+echo $DEMO_MNEMONIC_3 | kaijud keys add demowallet3 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
+echo $DEMO_MNEMONIC_4 | kaijud keys add demowallet4 --home $CHAIN_DIR/$CHAINID --recover --keyring-backend=test
 
-allianced add-genesis-account $(allianced --home $CHAIN_DIR/$CHAINID keys show val1 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ulunax  --home $CHAIN_DIR/$CHAINID
-allianced add-genesis-account $(allianced --home $CHAIN_DIR/$CHAINID keys show demowallet1 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ulunax  --home $CHAIN_DIR/$CHAINID
-allianced add-genesis-account $(allianced --home $CHAIN_DIR/$CHAINID keys show demowallet2 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ulunax  --home $CHAIN_DIR/$CHAINID
-allianced add-genesis-account $(allianced --home $CHAIN_DIR/$CHAINID keys show demowallet3 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ulunax  --home $CHAIN_DIR/$CHAINID
-allianced add-genesis-account $(allianced --home $CHAIN_DIR/$CHAINID keys show demowallet4 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ulunax  --home $CHAIN_DIR/$CHAINID
+kaijud add-genesis-account $(kaijud --home $CHAIN_DIR/$CHAINID keys show val1 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ukaijux  --home $CHAIN_DIR/$CHAINID
+kaijud add-genesis-account $(kaijud --home $CHAIN_DIR/$CHAINID keys show demowallet1 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ukaijux  --home $CHAIN_DIR/$CHAINID
+kaijud add-genesis-account $(kaijud --home $CHAIN_DIR/$CHAINID keys show demowallet2 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ukaijux  --home $CHAIN_DIR/$CHAINID
+kaijud add-genesis-account $(kaijud --home $CHAIN_DIR/$CHAINID keys show demowallet3 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ukaijux  --home $CHAIN_DIR/$CHAINID
+kaijud add-genesis-account $(kaijud --home $CHAIN_DIR/$CHAINID keys show demowallet4 --keyring-backend test -a) 10000000000000${STAKEDENOM},10000000000000ukaijux  --home $CHAIN_DIR/$CHAINID
 
 echo "Creating and collecting gentx..."
-allianced gentx val1 7000000000${STAKEDENOM} --home $CHAIN_DIR/$CHAINID --chain-id $CHAINID --keyring-backend test
-allianced collect-gentxs --home $CHAIN_DIR/$CHAINID
+kaijud gentx val1 7000000000${STAKEDENOM} --home $CHAIN_DIR/$CHAINID --chain-id $CHAINID --keyring-backend test
+kaijud collect-gentxs --home $CHAIN_DIR/$CHAINID
 
 sed -i -e 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:26657"#g' $CHAIN_DIR/$CHAINID/config/config.toml
 sed -i -e 's/timeout_commit = "5s"/timeout_commit = "1s"/g' $CHAIN_DIR/$CHAINID/config/config.toml
@@ -80,9 +80,9 @@ sed -i -e "s/\"unbonding_time\": \"1814400s\"/\"unbonding_time\": \"$UNBONDING_T
 sed -i -e "s/\"max_deposit_period\": \"172800s\"/\"max_deposit_period\": \"$GOV_PERIOD\"/g" $CHAIN_DIR/$CHAINID/config/genesis.json
 sed -i -e "s/\"voting_period\": \"172800s\"/\"voting_period\": \"$GOV_PERIOD\"/g" $CHAIN_DIR/$CHAINID/config/genesis.json
 
-## ALLIANCE
-sed -i -e "s/\"reward_claim_interval\": \"300s\"/\"reward_claim_interval\": \"$ALLIANCE_CLAIM_REWARDS\"/g" $CHAIN_DIR/$CHAINID/config/genesis.json
-sed -i -e "s/\"reward_delay_time\": \"86400s\"/\"reward_delay_time\": \"$ALLIANCE_CLAIM_REWARDS\"/g" $CHAIN_DIR/$CHAINID/config/genesis.json
+## KAIJU
+sed -i -e "s/\"reward_claim_interval\": \"300s\"/\"reward_claim_interval\": \"$KAIJU_CLAIM_REWARDS\"/g" $CHAIN_DIR/$CHAINID/config/genesis.json
+sed -i -e "s/\"reward_delay_time\": \"86400s\"/\"reward_delay_time\": \"$KAIJU_CLAIM_REWARDS\"/g" $CHAIN_DIR/$CHAINID/config/genesis.json
 
 
-echo "Genesis event created with $STAKEDENOM and ulunax"
+echo "Genesis event created with $STAKEDENOM and ukaijux"

@@ -10,9 +10,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/bank/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
-	banktypes "github.com/terra-money/alliance/custom/bank/types"
-	alliancekeeper "github.com/terra-money/alliance/x/alliance/keeper"
-	alliancetypes "github.com/terra-money/alliance/x/alliance/types"
+	banktypes "github.com/furya-official/kaiju/custom/bank/types"
+	kaijukeeper "github.com/furya-official/kaiju/x/kaiju/keeper"
+	kaijutypes "github.com/furya-official/kaiju/x/kaiju/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
@@ -20,7 +20,7 @@ import (
 type Keeper struct {
 	bankkeeper.BaseKeeper
 
-	ak   alliancekeeper.Keeper
+	ak   kaijukeeper.Keeper
 	sk   banktypes.StakingKeeper
 	acck accountkeeper.AccountKeeper
 }
@@ -38,14 +38,14 @@ func NewBaseKeeper(
 ) Keeper {
 	keeper := Keeper{
 		BaseKeeper: bankkeeper.NewBaseKeeper(cdc, storeKey, ak, paramSpace, blockedAddrs),
-		ak:         alliancekeeper.Keeper{},
+		ak:         kaijukeeper.Keeper{},
 		sk:         stakingkeeper.Keeper{},
 		acck:       ak,
 	}
 	return keeper
 }
 
-func (k *Keeper) RegisterKeepers(ak alliancekeeper.Keeper, sk banktypes.StakingKeeper) {
+func (k *Keeper) RegisterKeepers(ak kaijukeeper.Keeper, sk banktypes.StakingKeeper) {
 	k.ak = ak
 	k.sk = sk
 }
@@ -69,8 +69,8 @@ func (k Keeper) SupplyOf(c context.Context, req *types.QuerySupplyOfRequest) (*t
 		for _, asset := range assets {
 			totalRewardWeights = totalRewardWeights.Add(asset.RewardWeight)
 		}
-		allianceBonded := k.ak.GetAllianceBondedAmount(ctx, k.acck.GetModuleAddress(alliancetypes.ModuleName))
-		supply.Amount = supply.Amount.Sub(allianceBonded)
+		kaijuBonded := k.ak.GetKaijuBondedAmount(ctx, k.acck.GetModuleAddress(kaijutypes.ModuleName))
+		supply.Amount = supply.Amount.Sub(kaijuBonded)
 	}
 
 	return &types.QuerySupplyOfResponse{Amount: sdk.NewCoin(req.Denom, supply.Amount)}, nil
@@ -84,10 +84,10 @@ func (k Keeper) TotalSupply(ctx context.Context, req *types.QueryTotalSupplyRequ
 		return nil, status.Error(codes.Internal, err.Error())
 	}
 
-	allianceBonded := k.ak.GetAllianceBondedAmount(sdkCtx, k.acck.GetModuleAddress(alliancetypes.ModuleName))
+	kaijuBonded := k.ak.GetKaijuBondedAmount(sdkCtx, k.acck.GetModuleAddress(kaijutypes.ModuleName))
 	bondDenom := k.sk.BondDenom(sdkCtx)
 	if totalSupply.AmountOf(bondDenom).IsPositive() {
-		totalSupply = totalSupply.Sub(sdk.NewCoin(bondDenom, allianceBonded))
+		totalSupply = totalSupply.Sub(sdk.NewCoin(bondDenom, kaijuBonded))
 	}
 
 	return &types.QueryTotalSupplyResponse{Supply: totalSupply, Pagination: pageRes}, nil

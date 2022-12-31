@@ -34,12 +34,12 @@ client:
     path: docs/static/openapi.yml
 genesis:
   app_state:
-    alliance:
+    kaiju:
       assets:
-      - denom: uluna
+      - denom: ukaiju
         reward_weight: "0.5"
         take_rate: "0.000005"
-      - denom: bluna
+      - denom: bkaiju
         reward_weight: "0.9"
         take_rate: "0.0000009"
       - denom: token

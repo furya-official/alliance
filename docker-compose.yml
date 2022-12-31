@@ -1,13 +1,13 @@
 version: "3"
 
 services:
-  allianced_node:
-    container_name: allianced_node
-    image: "terra-money/localnet-alliance"
+  kaijud_node:
+    container_name: kaijud_node
+    image: "terra-money/localnet-kaiju"
     environment:
       - DEBUG=1
       - ID=0
-      - LOG=${LOG:-allianced.log}
+      - LOG=${LOG:-kaijud.log}
     cap_add:
       - SYS_PTRACE
     security_opt:
@@ -18,18 +18,18 @@ services:
       - "9090:9090"
       - "2345:2345"
     volumes:
-      - ./.testnets:/allianced/data:Z
+      - ./.testnets:/kaijud/data:Z
     networks:
       localnet:
         ipv4_address: 192.168.5.20
 
-  alliance_node_1:
-    container_name: alliance_node_1
-    image: "terra-money/localnet-alliance"
+  kaiju_node_1:
+    container_name: kaiju_node_1
+    image: "terra-money/localnet-kaiju"
     environment:
       - DEBUG=0
       - ID=1
-      - LOG=${LOG:-allianced.log}
+      - LOG=${LOG:-kaijud.log}
     cap_add:
       - SYS_PTRACE
     security_opt:
@@ -40,18 +40,18 @@ services:
       - "9091:9090"
       - "2346:2345"
     volumes:
-      - ./.testnets:/allianced/data:Z
+      - ./.testnets:/kaijud/data:Z
     networks:
       localnet:
         ipv4_address: 192.168.5.21
 
-  alliance_node_2:
-    container_name: alliance_node_2
-    image: "terra-money/localnet-alliance"
+  kaiju_node_2:
+    container_name: kaiju_node_2
+    image: "terra-money/localnet-kaiju"
     environment:
       - DEBUG=0
       - ID=2
-      - LOG=${LOG:-allianced.log}
+      - LOG=${LOG:-kaijud.log}
     cap_add:
       - SYS_PTRACE
     security_opt:
@@ -62,7 +62,7 @@ services:
       - "9092:9090"
       - "2347:2345"
     volumes:
-      - ./.testnets:/allianced/data:Z
+      - ./.testnets:/kaijud/data:Z
     networks:
       localnet:
         ipv4_address: 192.168.5.22

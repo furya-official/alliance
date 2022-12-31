@@ -4,17 +4,17 @@ info:
   name: ''
   description: ''
 paths:
-  /terra/alliances:
+  /terra/kaijus:
     get:
-      summary: Query paginated alliances
-      operationId: AllianceAllianceAlliances
+      summary: Query paginated kaijus
+      operationId: KaijuKaijuKaijus
       responses:
         '200':
           description: A successful response.
           schema:
             type: object
             properties:
-              alliances:
+              kaijus:
                 type: array
                 items:
                   type: object
@@ -28,7 +28,7 @@ paths:
                       type: string
                       title: >-
                         The reward weight specifies the ratio of rewards that
-                        will be given to each alliance asset
+                        will be given to each kaiju asset
 
                         It does not need to sum to 1. rate = weight /
                         total_weight
@@ -56,7 +56,7 @@ paths:
                     last_reward_change_time:
                       type: string
                       format: date-time
-                  title: 'key: denom value: AllianceAsset'
+                  title: 'key: denom value: KaijuAsset'
               pagination:
                 type: object
                 properties:
@@ -162,10 +162,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations:
+  /terra/kaijus/delegations:
     get:
-      summary: Query all paginated alliance delegations
-      operationId: AllianceAllianceAllAlliancesDelegations
+      summary: Query all paginated kaiju delegations
+      operationId: KaijuKaijuAllKaijusDelegations
       responses:
         '200':
           description: A successful response.
@@ -334,10 +334,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations/{delegator_addr}:
+  /terra/kaijus/delegations/{delegator_addr}:
     get:
-      summary: Query all paginated alliance delegations for a delegator addr
-      operationId: AllianceAllianceAlliancesDelegation
+      summary: Query all paginated kaiju delegations for a delegator addr
+      operationId: KaijuKaijuKaijusDelegation
       responses:
         '200':
           description: A successful response.
@@ -510,12 +510,12 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations/{delegator_addr}/{validator_addr}:
+  /terra/kaijus/delegations/{delegator_addr}/{validator_addr}:
     get:
       summary: >-
-        Query all paginated alliance delegations for a delegator addr and
+        Query all paginated kaiju delegations for a delegator addr and
         validator_addr
-      operationId: AllianceAllianceAlliancesDelegationByValidator
+      operationId: KaijuKaijuKaijusDelegationByValidator
       responses:
         '200':
           description: A successful response.
@@ -692,12 +692,12 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations/{delegator_addr}/{validator_addr}/ibc/{hash}:
+  /terra/kaijus/delegations/{delegator_addr}/{validator_addr}/ibc/{hash}:
     get:
       summary: >-
-        Query a delegation to an alliance by delegator addr, validator_addr and
+        Query a delegation to an kaiju by delegator addr, validator_addr and
         denom
-      operationId: AllianceAllianceIBCAllianceDelegation
+      operationId: KaijuKaijuIBCKaijuDelegation
       responses:
         '200':
           description: A successful response.
@@ -848,12 +848,12 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations/{delegator_addr}/{validator_addr}/{denom}:
+  /terra/kaijus/delegations/{delegator_addr}/{validator_addr}/{denom}:
     get:
       summary: >-
-        Query a delegation to an alliance by delegator addr, validator_addr and
+        Query a delegation to an kaiju by delegator addr, validator_addr and
         denom
-      operationId: AllianceAllianceAllianceDelegation
+      operationId: KaijuKaijuKaijuDelegation
       responses:
         '200':
           description: A successful response.
@@ -1004,17 +1004,17 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/ibc/{hash}:
+  /terra/kaijus/ibc/{hash}:
     get:
-      summary: Query a specific alliance by ibc hash
-      operationId: AllianceAllianceIBCAlliance
+      summary: Query a specific kaiju by ibc hash
+      operationId: KaijuKaijuIBCKaiju
       responses:
         '200':
           description: A successful response.
           schema:
             type: object
             properties:
-              alliance:
+              kaiju:
                 type: object
                 properties:
                   denom:
@@ -1026,7 +1026,7 @@ paths:
                     type: string
                     title: >-
                       The reward weight specifies the ratio of rewards that will
-                      be given to each alliance asset
+                      be given to each kaiju asset
 
                       It does not need to sum to 1. rate = weight / total_weight
 
@@ -1053,7 +1053,7 @@ paths:
                   last_reward_change_time:
                     type: string
                     format: date-time
-                title: 'key: denom value: AllianceAsset'
+                title: 'key: denom value: KaijuAsset'
         default:
           description: An unexpected error response.
           schema:
@@ -1079,9 +1079,9 @@ paths:
           type: string
       tags:
         - Query
-  /terra/alliances/params:
+  /terra/kaijus/params:
     get:
-      operationId: AllianceAllianceParams
+      operationId: KaijuKaijuParams
       responses:
         '200':
           description: A successful response.
@@ -1122,10 +1122,10 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /terra/alliances/rewards/{delegator_addr}/{validator_addr}/ibc/{hash}:
+  /terra/kaijus/rewards/{delegator_addr}/{validator_addr}/ibc/{hash}:
     get:
       summary: Query for rewards by delegator addr, validator_addr and denom
-      operationId: AllianceAllianceIBCAllianceDelegationRewards
+      operationId: KaijuKaijuIBCKaijuDelegationRewards
       responses:
         '200':
           description: A successful response.
@@ -1238,10 +1238,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/rewards/{delegator_addr}/{validator_addr}/{denom}:
+  /terra/kaijus/rewards/{delegator_addr}/{validator_addr}/{denom}:
     get:
       summary: Query for rewards by delegator addr, validator_addr and denom
-      operationId: AllianceAllianceAllianceDelegationRewards
+      operationId: KaijuKaijuKaijuDelegationRewards
       responses:
         '200':
           description: A successful response.
@@ -1354,10 +1354,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/validators:
+  /terra/kaijus/validators:
     get:
-      summary: Query all paginated alliance validators
-      operationId: AllianceAllianceAllAllianceValidators
+      summary: Query all paginated kaiju validators
+      operationId: KaijuKaijuAllKaijuValidators
       responses:
         '200':
           description: A successful response.
@@ -1530,10 +1530,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/validators/{validator_addr}:
+  /terra/kaijus/validators/{validator_addr}:
     get:
-      summary: Query alliance validator
-      operationId: AllianceAllianceAllianceValidator
+      summary: Query kaiju validator
+      operationId: KaijuKaijuKaijuValidator
       responses:
         '200':
           description: A successful response.
@@ -1621,17 +1621,17 @@ paths:
           type: string
       tags:
         - Query
-  /terra/alliances/{denom}:
+  /terra/kaijus/{denom}:
     get:
-      summary: Query a specific alliance by denom
-      operationId: AllianceAllianceAlliance
+      summary: Query a specific kaiju by denom
+      operationId: KaijuKaijuKaiju
       responses:
         '200':
           description: A successful response.
           schema:
             type: object
             properties:
-              alliance:
+              kaiju:
                 type: object
                 properties:
                   denom:
@@ -1643,7 +1643,7 @@ paths:
                     type: string
                     title: >-
                       The reward weight specifies the ratio of rewards that will
-                      be given to each alliance asset
+                      be given to each kaiju asset
 
                       It does not need to sum to 1. rate = weight / total_weight
 
@@ -1670,7 +1670,7 @@ paths:
                   last_reward_change_time:
                     type: string
                     format: date-time
-                title: 'key: denom value: AllianceAsset'
+                title: 'key: denom value: KaijuAsset'
         default:
           description: An unexpected error response.
           schema:
@@ -46001,7 +46001,7 @@ paths:
       tags:
         - Query
 definitions:
-  alliance.alliance.AllianceAsset:
+  kaiju.kaiju.KaijuAsset:
     type: object
     properties:
       denom:
@@ -46011,7 +46011,7 @@ definitions:
         type: string
         title: >-
           The reward weight specifies the ratio of rewards that will be given to
-          each alliance asset
+          each kaiju asset
 
           It does not need to sum to 1. rate = weight / total_weight
 
@@ -46037,8 +46037,8 @@ definitions:
       last_reward_change_time:
         type: string
         format: date-time
-    title: 'key: denom value: AllianceAsset'
-  alliance.alliance.Delegation:
+    title: 'key: denom value: KaijuAsset'
+  kaiju.kaiju.Delegation:
     type: object
     properties:
       delegator_address:
@@ -46065,7 +46065,7 @@ definitions:
       last_reward_claim_height:
         type: string
         format: uint64
-  alliance.alliance.DelegationResponse:
+  kaiju.kaiju.DelegationResponse:
     type: object
     properties:
       delegation:
@@ -46110,15 +46110,15 @@ definitions:
     description: |-
       DelegationResponse is equivalent to Delegation except that it contains a
       balance in addition to shares which is more suitable for client responses.
-  alliance.alliance.MsgClaimDelegationRewardsResponse:
+  kaiju.kaiju.MsgClaimDelegationRewardsResponse:
     type: object
-  alliance.alliance.MsgDelegateResponse:
+  kaiju.kaiju.MsgDelegateResponse:
     type: object
-  alliance.alliance.MsgRedelegateResponse:
+  kaiju.kaiju.MsgRedelegateResponse:
     type: object
-  alliance.alliance.MsgUndelegateResponse:
+  kaiju.kaiju.MsgUndelegateResponse:
     type: object
-  alliance.alliance.Params:
+  kaiju.kaiju.Params:
     type: object
     properties:
       reward_delay_time:
@@ -46130,7 +46130,7 @@ definitions:
         type: string
         format: date-time
         title: Last application of `take_rate` on assets
-  alliance.alliance.QueryAllianceDelegationResponse:
+  kaiju.kaiju.QueryKaijuDelegationResponse:
     type: object
     properties:
       delegation:
@@ -46188,7 +46188,7 @@ definitions:
 
           balance in addition to shares which is more suitable for client
           responses.
-  alliance.alliance.QueryAllianceDelegationRewardsResponse:
+  kaiju.kaiju.QueryKaijuDelegationRewardsResponse:
     type: object
     properties:
       rewards:
@@ -46205,10 +46205,10 @@ definitions:
 
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
-  alliance.alliance.QueryAllianceResponse:
+  kaiju.kaiju.QueryKaijuResponse:
     type: object
     properties:
-      alliance:
+      kaiju:
         type: object
         properties:
           denom:
@@ -46220,7 +46220,7 @@ definitions:
             type: string
             title: >-
               The reward weight specifies the ratio of rewards that will be
-              given to each alliance asset
+              given to each kaiju asset
 
               It does not need to sum to 1. rate = weight / total_weight
 
@@ -46246,8 +46246,8 @@ definitions:
           last_reward_change_time:
             type: string
             format: date-time
-        title: 'key: denom value: AllianceAsset'
-  alliance.alliance.QueryAllianceValidatorResponse:
+        title: 'key: denom value: KaijuAsset'
+  kaiju.kaiju.QueryKaijuValidatorResponse:
     type: object
     properties:
       validator_addr:
@@ -46294,7 +46294,7 @@ definitions:
 
             NOTE: The amount field is an Dec which implements the custom method
             signatures required by gogoproto.
-  alliance.alliance.QueryAllianceValidatorsResponse:
+  kaiju.kaiju.QueryKaijuValidatorsResponse:
     type: object
     properties:
       validators:
@@ -46384,7 +46384,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  alliance.alliance.QueryAlliancesDelegationsResponse:
+  kaiju.kaiju.QueryKaijusDelegationsResponse:
     type: object
     properties:
       delegations:
@@ -46470,10 +46470,10 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  alliance.alliance.QueryAlliancesResponse:
+  kaiju.kaiju.QueryKaijusResponse:
     type: object
     properties:
-      alliances:
+      kaijus:
         type: array
         items:
           type: object
@@ -46487,7 +46487,7 @@ definitions:
               type: string
               title: >-
                 The reward weight specifies the ratio of rewards that will be
-                given to each alliance asset
+                given to each kaiju asset
 
                 It does not need to sum to 1. rate = weight / total_weight
 
@@ -46513,7 +46513,7 @@ definitions:
             last_reward_change_time:
               type: string
               format: date-time
-          title: 'key: denom value: AllianceAsset'
+          title: 'key: denom value: KaijuAsset'
       pagination:
         type: object
         properties:
@@ -46540,7 +46540,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  alliance.alliance.QueryParamsResponse:
+  kaiju.kaiju.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -46555,7 +46555,7 @@ definitions:
             type: string
             format: date-time
             title: Last application of `take_rate` on assets
-  alliance.alliance.RewardHistory:
+  kaiju.kaiju.RewardHistory:
     type: object
     properties:
       denom:
