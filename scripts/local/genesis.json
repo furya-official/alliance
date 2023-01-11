@@ -1,6 +1,6 @@
 {
   "genesis_time": "2022-11-10T08:35:38.23607Z",
-  "chain_id": "alliance",
+  "chain_id": "furya",
   "initial_height": "1",
   "consensus_params": {
     "block": {
@@ -22,10 +22,10 @@
   },
   "app_hash": "",
   "app_state": {
-    "alliance": {
+    "furya": {
       "assets": [
         {
-          "denom": "ulunax",
+          "denom": "ufuryx",
           "reward_decay_interval": "600s",
           "reward_decay_rate": "0.010000000000000000",
           "reward_start_time": "2022-11-10T08:15:48.760645Z",
@@ -37,12 +37,12 @@
       ],
       "delegations": [
         {
-          "delegator_address": "alliance1qwexv7c6sm95lwhzn9027vyu2ccneaqacm84wq",
-          "denom": "ulunax",
+          "delegator_address": "furya1qwexv7c6sm95lwhzn9027vyu2ccneaqacm84wq",
+          "denom": "ufuryx",
           "last_reward_claim_height": "30",
           "reward_history": [],
           "shares": "10000000000.000000000000000000",
-          "validator_address": "alliancevaloper1phaxpevm5wecex2jyaqty2a4v02qj7qmut9cku"
+          "validator_address": "furyavaloper1phaxpevm5wecex2jyaqty2a4v02qj7qmut9cku"
         }
       ],
       "params": {
@@ -61,17 +61,17 @@
             "total_delegator_shares": [
               {
                 "amount": "10000000000.000000000000000000",
-                "denom": "ulunax"
+                "denom": "ufuryx"
               }
             ],
             "validator_shares": [
               {
                 "amount": "10000000000.000000000000000000",
-                "denom": "ulunax"
+                "denom": "ufuryx"
               }
             ]
           },
-          "validator_address": "alliancevaloper1phaxpevm5wecex2jyaqty2a4v02qj7qmut9cku"
+          "validator_address": "furyavaloper1phaxpevm5wecex2jyaqty2a4v02qj7qmut9cku"
         }
       ]
     },
@@ -86,35 +86,35 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "alliance1phaxpevm5wecex2jyaqty2a4v02qj7qm24tyvq",
+          "address": "furya1phaxpevm5wecex2jyaqty2a4v02qj7qm24tyvq",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "alliance1cyyzpxplxdzkeea7kwsydadg87357qnaznl0wd",
+          "address": "furya1cyyzpxplxdzkeea7kwsydadg87357qnaznl0wd",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "alliance18s5lynnmx37hq4wlrw9gdn68sg2uxp5racrg53",
+          "address": "furya18s5lynnmx37hq4wlrw9gdn68sg2uxp5racrg53",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "alliance1qwexv7c6sm95lwhzn9027vyu2ccneaqacm84wq",
+          "address": "furya1qwexv7c6sm95lwhzn9027vyu2ccneaqacm84wq",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "alliance14hcxlnwlqtq75ttaxf674vk6mafspg8xmx6pvv",
+          "address": "furya14hcxlnwlqtq75ttaxf674vk6mafspg8xmx6pvv",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -131,76 +131,76 @@
       },
       "balances": [
         {
-          "address": "alliance1qwexv7c6sm95lwhzn9027vyu2ccneaqacm84wq",
+          "address": "furya1qwexv7c6sm95lwhzn9027vyu2ccneaqacm84wq",
           "coins": [
             {
               "denom": "stake",
               "amount": "10000000000000"
             },
             {
-              "denom": "ulunax",
+              "denom": "ufuryx",
               "amount": "10000000000000"
             }
           ]
         },
         {
-          "address": "alliance1phaxpevm5wecex2jyaqty2a4v02qj7qm24tyvq",
+          "address": "furya1phaxpevm5wecex2jyaqty2a4v02qj7qm24tyvq",
           "coins": [
             {
               "denom": "stake",
               "amount": "10000000000000"
             },
             {
-              "denom": "ulunax",
+              "denom": "ufuryx",
               "amount": "10000000000000"
             }
           ]
         },
         {
-          "address": "alliance18s5lynnmx37hq4wlrw9gdn68sg2uxp5racrg53",
+          "address": "furya18s5lynnmx37hq4wlrw9gdn68sg2uxp5racrg53",
           "coins": [
             {
               "denom": "stake",
               "amount": "10000000000000"
             },
             {
-              "denom": "ulunax",
+              "denom": "ufuryx",
               "amount": "10000000000000"
             }
           ]
         },
         {
-          "address": "alliance14hcxlnwlqtq75ttaxf674vk6mafspg8xmx6pvv",
+          "address": "furya14hcxlnwlqtq75ttaxf674vk6mafspg8xmx6pvv",
           "coins": [
             {
               "denom": "stake",
               "amount": "10000000000000"
             },
             {
-              "denom": "ulunax",
+              "denom": "ufuryx",
               "amount": "10000000000000"
             }
           ]
         },
         {
-          "address": "alliance1cyyzpxplxdzkeea7kwsydadg87357qnaznl0wd",
+          "address": "furya1cyyzpxplxdzkeea7kwsydadg87357qnaznl0wd",
           "coins": [
             {
               "denom": "stake",
               "amount": "10000000000000"
             },
             {
-              "denom": "ulunax",
+              "denom": "ufuryx",
               "amount": "10000000000000"
             }
           ]
         },
         {
-          "address": "alliance1srd5yxrg346qd7mne893gy3g43elh2swr2cd77",
+          "address": "furya1srd5yxrg346qd7mne893gy3g43elh2swr2cd77",
           "coins": [
             {
               "amount": "10000000000",
-              "denom": "ulunax"
+              "denom": "ufuryx"
             }
           ]
         }
@@ -263,8 +263,8 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "alliance1phaxpevm5wecex2jyaqty2a4v02qj7qm24tyvq",
-                "validator_address": "alliancevaloper1phaxpevm5wecex2jyaqty2a4v02qj7qmut9cku",
+                "delegator_address": "furya1phaxpevm5wecex2jyaqty2a4v02qj7qm24tyvq",
+                "validator_address": "furyavaloper1phaxpevm5wecex2jyaqty2a4v02qj7qmut9cku",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
                   "key": "bU470Ur2TwZar16/x552D8xASvuJaiO41yhRG47XAgs="

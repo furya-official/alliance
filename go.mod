@@ -1,4 +1,4 @@
-module github.com/terra-money/alliance
+module github.com/furya-official/furya
 
 go 1.18
 

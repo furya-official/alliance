@@ -1,8 +1,8 @@
 #!/bin/bash
 
-BINARY=${BINARY:-allianced}
+BINARY=${BINARY:-furyad}
 CHAIN_DIR=./data
-CHAINID=${CHAINID:-alliance}
+CHAINID=${CHAINID:-furya}
 GRPCPORT=9090
 GRPCWEB=9091
 

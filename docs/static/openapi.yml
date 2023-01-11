@@ -4,17 +4,17 @@ info:
   name: ''
   description: ''
 paths:
-  /terra/alliances:
+  /terra/furyas:
     get:
-      summary: Query paginated alliances
-      operationId: AllianceAllianceAlliances
+      summary: Query paginated furyas
+      operationId: FuryaFuryaFuryas
       responses:
         '200':
           description: A successful response.
           schema:
             type: object
             properties:
-              alliances:
+              furyas:
                 type: array
                 items:
                   type: object
@@ -28,7 +28,7 @@ paths:
                       type: string
                       title: >-
                         The reward weight specifies the ratio of rewards that
-                        will be given to each alliance asset
+                        will be given to each furya asset
 
                         It does not need to sum to 1. rate = weight /
                         total_weight
@@ -56,7 +56,7 @@ paths:
                     last_reward_change_time:
                       type: string
                       format: date-time
-                  title: 'key: denom value: AllianceAsset'
+                  title: 'key: denom value: FuryaAsset'
               pagination:
                 type: object
                 properties:
@@ -162,10 +162,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations:
+  /terra/furyas/delegations:
     get:
-      summary: Query all paginated alliance delegations
-      operationId: AllianceAllianceAllAlliancesDelegations
+      summary: Query all paginated furya delegations
+      operationId: FuryaFuryaAllFuryasDelegations
       responses:
         '200':
           description: A successful response.
@@ -334,10 +334,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations/{delegator_addr}:
+  /terra/furyas/delegations/{delegator_addr}:
     get:
-      summary: Query all paginated alliance delegations for a delegator addr
-      operationId: AllianceAllianceAlliancesDelegation
+      summary: Query all paginated furya delegations for a delegator addr
+      operationId: FuryaFuryaFuryasDelegation
       responses:
         '200':
           description: A successful response.
@@ -510,12 +510,12 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations/{delegator_addr}/{validator_addr}:
+  /terra/furyas/delegations/{delegator_addr}/{validator_addr}:
     get:
       summary: >-
-        Query all paginated alliance delegations for a delegator addr and
+        Query all paginated furya delegations for a delegator addr and
         validator_addr
-      operationId: AllianceAllianceAlliancesDelegationByValidator
+      operationId: FuryaFuryaFuryasDelegationByValidator
       responses:
         '200':
           description: A successful response.
@@ -692,12 +692,12 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations/{delegator_addr}/{validator_addr}/ibc/{hash}:
+  /terra/furyas/delegations/{delegator_addr}/{validator_addr}/ibc/{hash}:
     get:
       summary: >-
-        Query a delegation to an alliance by delegator addr, validator_addr and
+        Query a delegation to an furya by delegator addr, validator_addr and
         denom
-      operationId: AllianceAllianceIBCAllianceDelegation
+      operationId: FuryaFuryaIBCFuryaDelegation
       responses:
         '200':
           description: A successful response.
@@ -848,12 +848,12 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/delegations/{delegator_addr}/{validator_addr}/{denom}:
+  /terra/furyas/delegations/{delegator_addr}/{validator_addr}/{denom}:
     get:
       summary: >-
-        Query a delegation to an alliance by delegator addr, validator_addr and
+        Query a delegation to an furya by delegator addr, validator_addr and
         denom
-      operationId: AllianceAllianceAllianceDelegation
+      operationId: FuryaFuryaFuryaDelegation
       responses:
         '200':
           description: A successful response.
@@ -1004,17 +1004,17 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/ibc/{hash}:
+  /terra/furyas/ibc/{hash}:
     get:
-      summary: Query a specific alliance by ibc hash
-      operationId: AllianceAllianceIBCAlliance
+      summary: Query a specific furya by ibc hash
+      operationId: FuryaFuryaIBCFurya
       responses:
         '200':
           description: A successful response.
           schema:
             type: object
             properties:
-              alliance:
+              furya:
                 type: object
                 properties:
                   denom:
@@ -1026,7 +1026,7 @@ paths:
                     type: string
                     title: >-
                       The reward weight specifies the ratio of rewards that will
-                      be given to each alliance asset
+                      be given to each furya asset
 
                       It does not need to sum to 1. rate = weight / total_weight
 
@@ -1053,7 +1053,7 @@ paths:
                   last_reward_change_time:
                     type: string
                     format: date-time
-                title: 'key: denom value: AllianceAsset'
+                title: 'key: denom value: FuryaAsset'
         default:
           description: An unexpected error response.
           schema:
@@ -1079,9 +1079,9 @@ paths:
           type: string
       tags:
         - Query
-  /terra/alliances/params:
+  /terra/furyas/params:
     get:
-      operationId: AllianceAllianceParams
+      operationId: FuryaFuryaParams
       responses:
         '200':
           description: A successful response.
@@ -1122,10 +1122,10 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /terra/alliances/rewards/{delegator_addr}/{validator_addr}/ibc/{hash}:
+  /terra/furyas/rewards/{delegator_addr}/{validator_addr}/ibc/{hash}:
     get:
       summary: Query for rewards by delegator addr, validator_addr and denom
-      operationId: AllianceAllianceIBCAllianceDelegationRewards
+      operationId: FuryaFuryaIBCFuryaDelegationRewards
       responses:
         '200':
           description: A successful response.
@@ -1238,10 +1238,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/rewards/{delegator_addr}/{validator_addr}/{denom}:
+  /terra/furyas/rewards/{delegator_addr}/{validator_addr}/{denom}:
     get:
       summary: Query for rewards by delegator addr, validator_addr and denom
-      operationId: AllianceAllianceAllianceDelegationRewards
+      operationId: FuryaFuryaFuryaDelegationRewards
       responses:
         '200':
           description: A successful response.
@@ -1354,10 +1354,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/validators:
+  /terra/furyas/validators:
     get:
-      summary: Query all paginated alliance validators
-      operationId: AllianceAllianceAllAllianceValidators
+      summary: Query all paginated furya validators
+      operationId: FuryaFuryaAllFuryaValidators
       responses:
         '200':
           description: A successful response.
@@ -1530,10 +1530,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /terra/alliances/validators/{validator_addr}:
+  /terra/furyas/validators/{validator_addr}:
     get:
-      summary: Query alliance validator
-      operationId: AllianceAllianceAllianceValidator
+      summary: Query furya validator
+      operationId: FuryaFuryaFuryaValidator
       responses:
         '200':
           description: A successful response.
@@ -1621,17 +1621,17 @@ paths:
           type: string
       tags:
         - Query
-  /terra/alliances/{denom}:
+  /terra/furyas/{denom}:
     get:
-      summary: Query a specific alliance by denom
-      operationId: AllianceAllianceAlliance
+      summary: Query a specific furya by denom
+      operationId: FuryaFuryaFurya
       responses:
         '200':
           description: A successful response.
           schema:
             type: object
             properties:
-              alliance:
+              furya:
                 type: object
                 properties:
                   denom:
@@ -1643,7 +1643,7 @@ paths:
                     type: string
                     title: >-
                       The reward weight specifies the ratio of rewards that will
-                      be given to each alliance asset
+                      be given to each furya asset
 
                       It does not need to sum to 1. rate = weight / total_weight
 
@@ -1670,7 +1670,7 @@ paths:
                   last_reward_change_time:
                     type: string
                     format: date-time
-                title: 'key: denom value: AllianceAsset'
+                title: 'key: denom value: FuryaAsset'
         default:
           description: An unexpected error response.
           schema:
@@ -5786,7 +5786,7 @@ paths:
                             type: string
                             description: >-
                               denom represents the string name of the given
-                              denom unit (e.g uatom).
+                              denom unit (e.g ufury).
                           exponent:
                             type: integer
                             format: int64
@@ -5799,10 +5799,10 @@ paths:
 
                               1 denom = 10^exponent base_denom
 
-                              (e.g. with a base_denom of uatom, one can create a
-                              DenomUnit of 'atom' with
+                              (e.g. with a base_denom of ufury, one can create a
+                              DenomUnit of 'fury' with
 
-                              exponent = 6, thus: 1 atom = 10^6 uatom).
+                              exponent = 6, thus: 1 fury = 10^6 ufury).
                           aliases:
                             type: array
                             items:
@@ -5989,7 +5989,7 @@ paths:
                           type: string
                           description: >-
                             denom represents the string name of the given denom
-                            unit (e.g uatom).
+                            unit (e.g ufury).
                         exponent:
                           type: integer
                           format: int64
@@ -6002,10 +6002,10 @@ paths:
 
                             1 denom = 10^exponent base_denom
 
-                            (e.g. with a base_denom of uatom, one can create a
-                            DenomUnit of 'atom' with
+                            (e.g. with a base_denom of ufury, one can create a
+                            DenomUnit of 'fury' with
 
-                            exponent = 6, thus: 1 atom = 10^6 uatom).
+                            exponent = 6, thus: 1 fury = 10^6 ufury).
                         aliases:
                           type: array
                           items:
@@ -23711,7 +23711,7 @@ paths:
                     title: minimum inflation rate
                   goal_bonded:
                     type: string
-                    title: goal of percent bonded atoms
+                    title: goal of percent bonded furys
                   blocks_per_year:
                     type: string
                     format: uint64
@@ -46001,7 +46001,7 @@ paths:
       tags:
         - Query
 definitions:
-  alliance.alliance.AllianceAsset:
+  furya.furya.FuryaAsset:
     type: object
     properties:
       denom:
@@ -46011,7 +46011,7 @@ definitions:
         type: string
         title: >-
           The reward weight specifies the ratio of rewards that will be given to
-          each alliance asset
+          each furya asset
 
           It does not need to sum to 1. rate = weight / total_weight
 
@@ -46037,8 +46037,8 @@ definitions:
       last_reward_change_time:
         type: string
         format: date-time
-    title: 'key: denom value: AllianceAsset'
-  alliance.alliance.Delegation:
+    title: 'key: denom value: FuryaAsset'
+  furya.furya.Delegation:
     type: object
     properties:
       delegator_address:
@@ -46065,7 +46065,7 @@ definitions:
       last_reward_claim_height:
         type: string
         format: uint64
-  alliance.alliance.DelegationResponse:
+  furya.furya.DelegationResponse:
     type: object
     properties:
       delegation:
@@ -46110,15 +46110,15 @@ definitions:
     description: |-
       DelegationResponse is equivalent to Delegation except that it contains a
       balance in addition to shares which is more suitable for client responses.
-  alliance.alliance.MsgClaimDelegationRewardsResponse:
+  furya.furya.MsgClaimDelegationRewardsResponse:
     type: object
-  alliance.alliance.MsgDelegateResponse:
+  furya.furya.MsgDelegateResponse:
     type: object
-  alliance.alliance.MsgRedelegateResponse:
+  furya.furya.MsgRedelegateResponse:
     type: object
-  alliance.alliance.MsgUndelegateResponse:
+  furya.furya.MsgUndelegateResponse:
     type: object
-  alliance.alliance.Params:
+  furya.furya.Params:
     type: object
     properties:
       reward_delay_time:
@@ -46130,7 +46130,7 @@ definitions:
         type: string
         format: date-time
         title: Last application of `take_rate` on assets
-  alliance.alliance.QueryAllianceDelegationResponse:
+  furya.furya.QueryFuryaDelegationResponse:
     type: object
     properties:
       delegation:
@@ -46188,7 +46188,7 @@ definitions:
 
           balance in addition to shares which is more suitable for client
           responses.
-  alliance.alliance.QueryAllianceDelegationRewardsResponse:
+  furya.furya.QueryFuryaDelegationRewardsResponse:
     type: object
     properties:
       rewards:
@@ -46205,10 +46205,10 @@ definitions:
 
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
-  alliance.alliance.QueryAllianceResponse:
+  furya.furya.QueryFuryaResponse:
     type: object
     properties:
-      alliance:
+      furya:
         type: object
         properties:
           denom:
@@ -46220,7 +46220,7 @@ definitions:
             type: string
             title: >-
               The reward weight specifies the ratio of rewards that will be
-              given to each alliance asset
+              given to each furya asset
 
               It does not need to sum to 1. rate = weight / total_weight
 
@@ -46246,8 +46246,8 @@ definitions:
           last_reward_change_time:
             type: string
             format: date-time
-        title: 'key: denom value: AllianceAsset'
-  alliance.alliance.QueryAllianceValidatorResponse:
+        title: 'key: denom value: FuryaAsset'
+  furya.furya.QueryFuryaValidatorResponse:
     type: object
     properties:
       validator_addr:
@@ -46294,7 +46294,7 @@ definitions:
 
             NOTE: The amount field is an Dec which implements the custom method
             signatures required by gogoproto.
-  alliance.alliance.QueryAllianceValidatorsResponse:
+  furya.furya.QueryFuryaValidatorsResponse:
     type: object
     properties:
       validators:
@@ -46384,7 +46384,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  alliance.alliance.QueryAlliancesDelegationsResponse:
+  furya.furya.QueryFuryasDelegationsResponse:
     type: object
     properties:
       delegations:
@@ -46470,10 +46470,10 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  alliance.alliance.QueryAlliancesResponse:
+  furya.furya.QueryFuryasResponse:
     type: object
     properties:
-      alliances:
+      furyas:
         type: array
         items:
           type: object
@@ -46487,7 +46487,7 @@ definitions:
               type: string
               title: >-
                 The reward weight specifies the ratio of rewards that will be
-                given to each alliance asset
+                given to each furya asset
 
                 It does not need to sum to 1. rate = weight / total_weight
 
@@ -46513,7 +46513,7 @@ definitions:
             last_reward_change_time:
               type: string
               format: date-time
-          title: 'key: denom value: AllianceAsset'
+          title: 'key: denom value: FuryaAsset'
       pagination:
         type: object
         properties:
@@ -46540,7 +46540,7 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
-  alliance.alliance.QueryParamsResponse:
+  furya.furya.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -46555,7 +46555,7 @@ definitions:
             type: string
             format: date-time
             title: Last application of `take_rate` on assets
-  alliance.alliance.RewardHistory:
+  furya.furya.RewardHistory:
     type: object
     properties:
       denom:
@@ -48615,7 +48615,7 @@ definitions:
     properties:
       denom:
         type: string
-        description: denom represents the string name of the given denom unit (e.g uatom).
+        description: denom represents the string name of the given denom unit (e.g ufury).
       exponent:
         type: integer
         format: int64
@@ -48626,10 +48626,10 @@ definitions:
 
           1 denom = 10^exponent base_denom
 
-          (e.g. with a base_denom of uatom, one can create a DenomUnit of 'atom'
+          (e.g. with a base_denom of ufury, one can create a DenomUnit of 'fury'
           with
 
-          exponent = 6, thus: 1 atom = 10^6 uatom).
+          exponent = 6, thus: 1 fury = 10^6 ufury).
       aliases:
         type: array
         items:
@@ -48672,7 +48672,7 @@ definitions:
               type: string
               description: >-
                 denom represents the string name of the given denom unit (e.g
-                uatom).
+                ufury).
             exponent:
               type: integer
               format: int64
@@ -48684,10 +48684,10 @@ definitions:
 
                 1 denom = 10^exponent base_denom
 
-                (e.g. with a base_denom of uatom, one can create a DenomUnit of
-                'atom' with
+                (e.g. with a base_denom of ufury, one can create a DenomUnit of
+                'fury' with
 
-                exponent = 6, thus: 1 atom = 10^6 uatom).
+                exponent = 6, thus: 1 fury = 10^6 ufury).
             aliases:
               type: array
               items:
@@ -48865,7 +48865,7 @@ definitions:
                   type: string
                   description: >-
                     denom represents the string name of the given denom unit
-                    (e.g uatom).
+                    (e.g ufury).
                 exponent:
                   type: integer
                   format: int64
@@ -48877,10 +48877,10 @@ definitions:
 
                     1 denom = 10^exponent base_denom
 
-                    (e.g. with a base_denom of uatom, one can create a DenomUnit
-                    of 'atom' with
+                    (e.g. with a base_denom of ufury, one can create a DenomUnit
+                    of 'fury' with
 
-                    exponent = 6, thus: 1 atom = 10^6 uatom).
+                    exponent = 6, thus: 1 fury = 10^6 ufury).
                 aliases:
                   type: array
                   items:
@@ -49021,7 +49021,7 @@ definitions:
                     type: string
                     description: >-
                       denom represents the string name of the given denom unit
-                      (e.g uatom).
+                      (e.g ufury).
                   exponent:
                     type: integer
                     format: int64
@@ -49033,10 +49033,10 @@ definitions:
 
                       1 denom = 10^exponent base_denom
 
-                      (e.g. with a base_denom of uatom, one can create a
-                      DenomUnit of 'atom' with
+                      (e.g. with a base_denom of ufury, one can create a
+                      DenomUnit of 'fury' with
 
-                      exponent = 6, thus: 1 atom = 10^6 uatom).
+                      exponent = 6, thus: 1 fury = 10^6 ufury).
                   aliases:
                     type: array
                     items:
@@ -61644,7 +61644,7 @@ definitions:
         title: minimum inflation rate
       goal_bonded:
         type: string
-        title: goal of percent bonded atoms
+        title: goal of percent bonded furys
       blocks_per_year:
         type: string
         format: uint64
@@ -61691,7 +61691,7 @@ definitions:
             title: minimum inflation rate
           goal_bonded:
             type: string
-            title: goal of percent bonded atoms
+            title: goal of percent bonded furys
           blocks_per_year:
             type: string
             format: uint64

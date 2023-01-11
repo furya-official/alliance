@@ -4,7 +4,7 @@
   "result": {
     "genesis": {
       "genesis_time": "2022-11-07T11:49:16.817925521Z",
-      "chain_id": "alliance-testnet-1",
+      "chain_id": "furya-testnet-1",
       "initial_height": "1",
       "consensus_params": {
         "block": {
@@ -26,7 +26,7 @@
       },
       "app_hash": "",
       "app_state": {
-        "alliance": {
+        "furya": {
           "params": {
             "reward_delay_time": "30s",
             "reward_claim_interval": "30s",
@@ -45,21 +45,21 @@
           "accounts": [
             {
               "@type": "/cosmos.auth.v1beta1.BaseAccount",
-              "address": "alliance1szr936e09hexqznn9zesmy89qlarv6tvjh3gum",
+              "address": "furya1szr936e09hexqznn9zesmy89qlarv6tvjh3gum",
               "pub_key": null,
               "account_number": "0",
               "sequence": "0"
             },
             {
               "@type": "/cosmos.auth.v1beta1.BaseAccount",
-              "address": "alliance1mx2xu368anmylv8kmwkc2x6wkdf2cp5g86r3z4",
+              "address": "furya1mx2xu368anmylv8kmwkc2x6wkdf2cp5g86r3z4",
               "pub_key": null,
               "account_number": "0",
               "sequence": "0"
             },
             {
               "@type": "/cosmos.auth.v1beta1.BaseAccount",
-              "address": "alliance1252dpwknm80cswr9vy9u9f4v58ytg34a76pjwa",
+              "address": "furya1252dpwknm80cswr9vy9u9f4v58ytg34a76pjwa",
               "pub_key": null,
               "account_number": "0",
               "sequence": "0"
@@ -76,7 +76,7 @@
           },
           "balances": [
             {
-              "address": "alliance1252dpwknm80cswr9vy9u9f4v58ytg34a76pjwa",
+              "address": "furya1252dpwknm80cswr9vy9u9f4v58ytg34a76pjwa",
               "coins": [
                 {
                   "denom": "stake",
@@ -89,7 +89,7 @@
               ]
             },
             {
-              "address": "alliance1szr936e09hexqznn9zesmy89qlarv6tvjh3gum",
+              "address": "furya1szr936e09hexqznn9zesmy89qlarv6tvjh3gum",
               "coins": [
                 {
                   "denom": "stake",
@@ -102,7 +102,7 @@
               ]
             },
             {
-              "address": "alliance1mx2xu368anmylv8kmwkc2x6wkdf2cp5g86r3z4",
+              "address": "furya1mx2xu368anmylv8kmwkc2x6wkdf2cp5g86r3z4",
               "coins": [
                 {
                   "denom": "stake",
@@ -182,8 +182,8 @@
                       "max_change_rate": "0.010000000000000000"
                     },
                     "min_self_delegation": "1",
-                    "delegator_address": "alliance1szr936e09hexqznn9zesmy89qlarv6tvjh3gum",
-                    "validator_address": "alliancevaloper1szr936e09hexqznn9zesmy89qlarv6tvyfl5x8",
+                    "delegator_address": "furya1szr936e09hexqznn9zesmy89qlarv6tvjh3gum",
+                    "validator_address": "furyavaloper1szr936e09hexqznn9zesmy89qlarv6tvyfl5x8",
                     "pubkey": {
                       "@type": "/cosmos.crypto.ed25519.PubKey",
                       "key": "VydbVgbjPGBh7ungFt0snKIW2FXnZlGssjwygQT66V4="
@@ -244,8 +244,8 @@
                       "max_change_rate": "0.010000000000000000"
                     },
                     "min_self_delegation": "1",
-                    "delegator_address": "alliance1mx2xu368anmylv8kmwkc2x6wkdf2cp5g86r3z4",
-                    "validator_address": "alliancevaloper1mx2xu368anmylv8kmwkc2x6wkdf2cp5g3yddcf",
+                    "delegator_address": "furya1mx2xu368anmylv8kmwkc2x6wkdf2cp5g86r3z4",
+                    "validator_address": "furyavaloper1mx2xu368anmylv8kmwkc2x6wkdf2cp5g3yddcf",
                     "pubkey": {
                       "@type": "/cosmos.crypto.ed25519.PubKey",
                       "key": "goVjgoT/4woyjCr9fWDXRk8+jyT+x0JgHOC3SHbOPhg="
@@ -306,8 +306,8 @@
                       "max_change_rate": "0.010000000000000000"
                     },
                     "min_self_delegation": "1",
-                    "delegator_address": "alliance1252dpwknm80cswr9vy9u9f4v58ytg34a76pjwa",
-                    "validator_address": "alliancevaloper1252dpwknm80cswr9vy9u9f4v58ytg34agy0w5p",
+                    "delegator_address": "furya1252dpwknm80cswr9vy9u9f4v58ytg34a76pjwa",
+                    "validator_address": "furyavaloper1252dpwknm80cswr9vy9u9f4v58ytg34agy0w5p",
                     "pubkey": {
                       "@type": "/cosmos.crypto.ed25519.PubKey",
                       "key": "qkm8VdvRjF926QV1+MBuPEb8wgh4AHC0/xfsV3DKULg="

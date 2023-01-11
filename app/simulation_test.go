@@ -17,7 +17,7 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	tmtypes "github.com/tendermint/tendermint/types"
-	"github.com/terra-money/alliance/app"
+	"github.com/furya-official/furya/app"
 )
 
 func init() {

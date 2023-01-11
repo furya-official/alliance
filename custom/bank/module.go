@@ -7,11 +7,11 @@ import (
 	bankmodule "github.com/cosmos/cosmos-sdk/x/bank"
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 	"github.com/cosmos/cosmos-sdk/x/bank/types"
-	custombankkeeper "github.com/terra-money/alliance/custom/bank/keeper"
+	custombankkeeper "github.com/furya-official/furya/custom/bank/keeper"
 )
 
 // AppModule wraps around the bank module and the bank keeper to return the right total supply ignoring bonded tokens
-// that the alliance module minted to rebalance the voting power
+// that the furya module minted to rebalance the voting power
 // It modifies the TotalSupply and SupplyOf GRPC queries
 type AppModule struct {
 	bankmodule.AppModule
